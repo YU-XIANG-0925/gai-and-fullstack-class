@@ -10,6 +10,7 @@
             background-color: var(--hero-blue-dark);
             height: 100vh;
             position: relative;
+            overflow: hidden; /* 防止 hover 時超出邊界 */
         }
 
         .section01 .box01{
@@ -90,7 +91,7 @@
             padding: 10px;
             border-radius: 30px;
             box-shadow: 1px 1px 2px 1px var(--ink-shadow-dark);
-
+            z-index: 10; /* 確保文字在最上層 */
         }
         .userText h3 {
             color: var(--crimson-strike);
@@ -99,33 +100,50 @@
             font-size: 18px;
         }
 
+        /* Section 02 改用 Flexbox 以容納更多作品 */
         .section02 {
             position: relative;
-            height: 400px;
+            min-height: 400px; /* 改為最小高度，依內容長高 */
             background-color: var(--hero-blue-light);
+            display: flex;
+            flex-wrap: wrap; /* 允許換行 */
+            justify-content: center; /* 水平置中 */
+            gap: 40px; /* 每個圓圈之間的距離 */
+            padding: 50px 20px; /* 上下左右留白 */
         }
 
-        .section02 .box01{
-            position: absolute;
+        /* 統一所有作品圓圈的樣式 */
+        .section02 .work-box {
+            position: relative; /* 改為相對定位 */
             width: 300px;
             height: 300px;
             background-color: var(--golden-era);
             box-shadow: 2px 2px 3px 2px var(--golden-era-dark);
             border-radius: 50%;
-            left: 20px;
-            top: 20px;
             text-align: center;
             line-height: 300px;
+            transition: all 0.2s;
+            flex-shrink: 0; /* 防止圓圈被壓縮 */
         } 
-        .section02 .box01 a{
+        
+        .section02 .work-box a{
             text-decoration: none;
-            font-size: 30px;
+            font-size: 24px; /* 字體稍微縮小以適應長檔名 */
             color: var(--ink-shadow);
+            display: block; /* 讓連結填滿整個圓 */
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* 防止長檔名溢出 */
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 0 20px; /* 左右留白防止文字貼邊 */
+            box-sizing: border-box;
         }
-        .section02 .box01:hover {
+
+        .section02 .work-box:hover {
             background-color: var(--golden-era-light);
             transform: scale(1.1);
-            transition: all 0.2s;
+            z-index: 5;
         }
     </style>
 </head>
@@ -140,14 +158,27 @@
             <h1>劉宇翔</h1>
             <hr>
             <h3>曬狗照</h3>
-            <p>牠是我女朋友的狗，牠的名字叫做歐福</p>
-            <p>指出用於最高是以十二一系列，可以對象先後基礎股份中每個遠程立刻咖啡女性新竹背後出現。</p>
+            <p>他是我女朋友的狗，牠的名字叫做歐福</p>
+            <p>他今年今年三歲，是領養回來的受虐犬🥲，<del>歡迎斗內</del></p>
         </div>
     </div>
+    
     <div class="section02">
-        <div class="box01"><a href="20260129-ex01.html" target="_blank" rel="noopener noreferrer">作品 1</a></div>
-        <div class="box02"></div>
-        <div class="box03"></div>
+        <!-- 自動生成的練習作品列表 -->
+        <div class="work-box"><a href="20260122-1.html" target="_blank">20260122-1</a></div>
+        <div class="work-box"><a href="20260122-2.html" target="_blank">20260122-2</a></div>
+        <div class="work-box"><a href="20260127-ex01.html" target="_blank">0127-ex01</a></div>
+        <div class="work-box"><a href="20260127-practice-css.html" target="_blank">0127-CSS練習</a></div>
+        <div class="work-box"><a href="20260129-ex01.html" target="_blank">0129-ex01</a></div>
+        <div class="work-box"><a href="20260129-userPage.html" target="_blank">0129-userPage</a></div>
+        <div class="work-box"><a href="20260202-01.html" target="_blank">0202-01</a></div>
+        <div class="work-box"><a href="20260202-03.html" target="_blank">0202-03</a></div>
+        <div class="work-box"><a href="20260202-05.html" target="_blank">0202-05</a></div>
+        <div class="work-box"><a href="20260205-ch05-table.html" target="_blank">0205-表格</a></div>
+        <div class="work-box"><a href="20260210-ch06-col-ex01.html" target="_blank">0210-欄與列</a></div>
+        <div class="work-box"><a href="20260212-01-practice.html" target="_blank">0212-練習</a></div>
+        <div class="work-box"><a href="20260212-01.html" target="_blank">0212-01</a></div>
+        <div class="work-box"><a href="ch05. 表格(table).html" target="_blank">ch05-表格</a></div>
     </div>
 </body>
 </html>

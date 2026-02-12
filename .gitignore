@@ -1,4 +1,5 @@
 bak/
+*.bak
 .vscode/
 *.log
 Thumbs.db
