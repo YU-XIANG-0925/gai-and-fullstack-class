@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>練習01. 使用CSS語法配置版面</title>
-    <!-- 假設您的 CSS 變數定義在 ex01.css 或直接引用 Canvas 中的定義 -->
-    <link rel="stylesheet" href="css/ex01.css">
+    <link rel="stylesheet" href="css/all_might_color.css">
     <style>
         body {
-            /* 更新：使用 surface-100 作為淺色背景 */
-            background-color: var(--ep-surface-100); 
+            /* 背景色：改用皮膚光-淺色 */
+            background-color: var(--skin-and-light-light);
         }
 
         .wapper {
@@ -21,10 +20,10 @@
             width: 100%;
             display: block;
         }
-        
+
         nav {
-            /* 更新：使用 primary-500 作為導覽列主色 */
-            background-color: var(--ep-primary-500);
+            /* 導覽列背景：改用英雄藍 */
+            background-color: var(--hero-blue);
             text-align: center;
         }
 
@@ -40,18 +39,22 @@
         nav ul li a {
             display: block;
             padding: 15px 20px;
-            background-color: var(--ep-neon-purple);
+            /* 按鈕背景：改用黃金時代 */
+            background-color: var(--golden-era);
             text-decoration: none;
-            color: var(--ep-midnight-900);
+            /* 文字顏色：改用墨水陰影 */
+            color: var(--ink-shadow);
             margin-right: 20px;
             border-radius: 10px;
-            box-shadow: 2px 2px 5px var(--ep-midnight-700);
+            /* 陰影：改用墨水陰影-淺色 */
+            box-shadow: 2px 2px 5px var(--ink-shadow-light);
             transition: all 0.3s ease;
         }
 
         nav ul li a:hover {
-            background-color: var(--ep-neon-pink);
-            box-shadow: 4px 4px 8px var(--ep-midnight-900);
+            /* 懸停效果：改用緋紅重擊 */
+            background-color: var(--crimson-strike);
+            box-shadow: 4px 4px 8px var(--ink-shadow);
             color: #fff;
             transition: all 0.3s ease;
         }
@@ -61,15 +64,17 @@
         }
 
         .content_in {
-            background-color: var(--ep-surface-50);
+            /* 內容區塊背景：改用皮膚光 */
+            background-color: var(--skin-and-light);
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            
+
             text-align: center;
         }
         .content_in h1 {
-            color: var(--ep-deep-500);
+            /* 標題顏色：改用英雄藍-深色 */
+            color: var(--hero-blue-dark);
             margin-bottom: 20px;
         }
 
@@ -82,22 +87,25 @@
         .content_in a {
             display: inline-block;
             padding: 15px 20px;
-            background-color: var(--ep-primary-300);
+            /* 連結背景：改用黃金時代-淺色 */
+            background-color: var(--golden-era-light);
             text-decoration: none;
-            color: var(--ep-midnight-900);
+            color: var(--ink-shadow);
             margin-right: 20px;
             border-radius: 10px;
-            box-shadow: 2px 2px 5px var(--ep-midnight-700);
+            box-shadow: 2px 2px 5px var(--ink-shadow-light);
         }
         .content_in a:hover {
-            background-color: var(--ep-primary-200);
-            box-shadow: 4px 4px 8px var(--ep-midnight-900);
+            /* 連結懸停：改用黃金時代 */
+            background-color: var(--golden-era);
+            box-shadow: 4px 4px 8px var(--ink-shadow);
             transition: all 0.3s ease;
         }
 
         .footer {
             height: 100px;
-            background-color: var(--ep-midnight-800);
+            /* 頁尾背景：改用英雄藍-深色 */
+            background-color: var(--hero-blue-dark);
             margin-top: 40px;
         }
     </style>

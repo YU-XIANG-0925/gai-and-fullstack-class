@@ -10,10 +10,10 @@
     height: 100%;
 
     /* 更有旅遊氛圍的漸層（夕陽+海岸色調） */
-    /* background: linear-gradient(135deg,
+    background: linear-gradient(135deg,
             rgba(255, 204, 153, 0.25) 0%,
             rgba(255, 140, 66, 0.55) 40%,
-            rgba(0, 180, 216, 0.45) 100%); */
+            rgba(0, 180, 216, 0.45) 100%);
 
     /* 柔焦玻璃質感 */
     backdrop-filter: blur(6px);

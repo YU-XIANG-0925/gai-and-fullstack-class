@@ -5,32 +5,34 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ch06. 地方美食列表</title>
+    <title>ch06. 旅遊美食資料結構</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all_might_color.css">
     <link rel="stylesheet" href="css/style.css">
-    
+
 </head>
 
 <body>
     <div class="container">
         <div class="row" id="myrow">
+            <!-- 靜態範例資料 (等待 AJAX 載入) -->
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div class="content_box roller-l">
                     <div class="roller-l_box">
-                        <button class="btn btn-primary">查看更多</button>
+                        <button class="btn btn-primary">詳細資料</button>
                     </div>
-                    <div style="background-image: url(https://picsum.photos/id/684/600/400); height: 160px; background-position: center center;background-size: cover; border-radius: 5px;">
+                    <div style="background-image: url(https://picsum.photos/id/684/600/400); height: 160px; background-position: center center;
+background-size: cover; border-radius: 5px;">
                     </div>
                     <div class="h3 text-center fw-900">餐廳名稱</div>
-                    <div class="h5">電話: xxxxxxxxxxx</div>
-                    <div class="h5">地址: xxxxxxxxxxx</div>
-                    <p>簡介: 十分是因為台南感染電視劇這種瀏覽成立引發，過了什麼千萬論文互相問題石油，大哥單位，快捷負責人，培養。</p>
+                    <div class="h5">電話: 02-12345678</div>
+                    <div class="h5">地址: 台北市信義區...</div>
+                    <p>介紹: 這是一間非常美味的餐廳，歡迎大家來品嚐。</p>
                 </div>
             </div>
         </div>
     </div>
-        
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-4.0.0.js"></script>
     <script>
@@ -51,13 +53,13 @@
 
             items.forEach(item => {
                 let pic = item.PicURL ? item.PicURL : "images/oufu.png";
-                let tel = item.Tel ? item.Tel : "未提供";
-                let hostwords = item.HostWords ? item.HostWords.substring(0,30) : "未提供";
+                let tel = item.Tel ? item.Tel : "暫無電話";
+                let hostwords = item.HostWords ? item.HostWords.substring(0,30) : "暫無介紹";
                 let strHtml =   `<div class="col-md-6 col-lg-4 col-xl-3">
                                 <div class="content_box roller-l">
                                     <div class="roller-l_box" style="background-image: url('${pic}');">
                                         <button class="btn btn-primary">
-                                            查看更多
+                                            詳細資料
                                         </button>
                                     </div>
                                     <div style="
@@ -67,14 +69,14 @@
                                     border-radius: 5px;">
                                     </div>
                                     <div class="h3 text-center fw-900">${item.Name}</div>
-                                    <div class="h5">電話: ${item.Tel}</div>
+                                    <div class="h5">電話: ${tel}</div>
                                     <div class="h5">地址: ${item.City}${item.Town}${item.Address}</div>
-                                    <p>簡介: ${hostwords}</p>
+                                    <p>介紹: ${hostwords}...</p>
                                 </div>
                             </div>`;
                 $("#myrow").append(strHtml);
             });
-            
+
         }
     </script>
 </body>

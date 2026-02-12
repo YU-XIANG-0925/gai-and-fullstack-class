@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>複習01. 使用CSS語法配置版面</title>
-    <link rel="stylesheet" href="css/ex01.css">
+    <title>CSS 佈局練習</title>
+    <!-- 引入統一色票定義 -->
+    <link rel="stylesheet" href="css/all_might_color.css">
     <style>
         body {
-            background-color: var(--ui-bg);
+            /* 背景色：改用皮膚光-淺色 */
+            background-color: var(--skin-and-light-light);
         }
 
         .wapper {
-            background-color: var(--ep-midnight-500);
+            /* 容器背景：改用英雄藍-深色 */
+            background-color: var(--hero-blue-dark);
             margin: 0 auto;
             width: 1024px;
         }
@@ -20,9 +23,10 @@
         .wapper .header img {
             width: 100%;
         }
-        
+
         nav {
-            background-color: var(--ep-primary-700);
+            /* 導覽列背景：改用英雄藍 */
+            background-color: var(--hero-blue);
             text-align: center;
         }
 
@@ -37,17 +41,21 @@
         nav ul li a {
             display: block;
             padding: 15px 20px;
-            background-color: var(--ep-neon-purple);
+            /* 按鈕背景：改用黃金時代 */
+            background-color: var(--golden-era);
             text-decoration: none;
-            color: var(--ep-midnight-900);
+            /* 文字顏色：改用墨水陰影 */
+            color: var(--ink-shadow);
             margin-right: 20px;
             border-radius: 10px;
-            box-shadow: 2px 2px 5px var(--ep-midnight-700);
+            /* 陰影：改用墨水陰影-淺色 */
+            box-shadow: 2px 2px 5px var(--ink-shadow-light);
             transition: all 0.3s ease;
         }
         nav ul li a:hover {
-            background-color: var(--ep-neon-pink);
-            box-shadow: 4px 4px 8px var(--ep-midnight-900);
+            /* 懸停效果：改用緋紅重擊 */
+            background-color: var(--crimson-strike);
+            box-shadow: 4px 4px 8px var(--ink-shadow);
             color: #fff;
             transition: all 0.3s ease;
         }
@@ -57,18 +65,22 @@
         }
 
         .content_in {
-            background-color: var(--ep-surface-50);
+            /* 內容區塊背景：改用皮膚光 */
+            background-color: var(--skin-and-light);
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 20px var(--ep-deep-50);
+            /* 陰影：改用皮膚光-深色 */
+            box-shadow: 0 4px 20px var(--skin-and-light-dark);
             text-align: center;
         }
         .content_in h1 {
-            color: var(--ep-deep-500);
+            /* 標題顏色：改用英雄藍-深色 */
+            color: var(--hero-blue-dark);
             margin-bottom: 25px;
         }
         .content_in p {
-            color: var(--ep-midnight-900);
+            /* 文字顏色：改用墨水陰影 */
+            color: var(--ink-shadow);
             font-size: 20px;
             margin-bottom: 15px;
             line-height: 1.8;
@@ -76,30 +88,35 @@
         .content_in a {
             display: inline-block;
             padding: 15px 20px;
-            background-color: var(--ep-primary-500);
+            /* 連結背景：改用黃金時代-淺色 */
+            background-color: var(--golden-era-light);
             border-radius: 15%;
-            box-shadow: 2px 2px 5px 2px var(--ep-deep-800);
-            color: var(--ui-text);
+            /* 陰影：改用墨水陰影-深色 */
+            box-shadow: 2px 2px 5px 2px var(--ink-shadow-dark);
+            color: var(--ink-shadow);
             text-decoration: none;
         }
         .content_in a:hover {
-            background-color: var(--ep-neon-pink);
-            box-shadow: 4px 4px 8px var(--ep-neon-blue);
-            color: var(--ep-primary-900);
+            /* 連結懸停：改用緋紅重擊 */
+            background-color: var(--crimson-strike);
+            box-shadow: 4px 4px 8px var(--hero-blue-light);
+            color: var(--ink-shadow-dark);
             transform: scale(1.2);
             transition: all 0.3s ease;
         }
 
         .footer {
-            background-color: var(--ep-primary-700);
+            /* 頁尾背景：改用英雄藍 */
+            background-color: var(--hero-blue);
             text-align: center;
         }
-        
+
         .footer .info {
             padding: 5px;
         }
         .footer .info p{
-            color: var(--ep-midnight-50);
+            /* 頁尾文字：改用皮膚光-淺色 */
+            color: var(--skin-and-light-light);
             margin: 0 auto;
             line-height: 1.5;
         }
