@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML CSS 練習</title>
+
+    <style>
+        .box-100 {
+            width: 100px;
+            height: 100px;
+            background: #878787;
+            box-shadow: 5px 5px 10px 5px #000000;
+        }
+
+        .box-32p {
+            background-color: aqua;
+            border-radius: 10px;
+            margin: 2px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: 20px sans-serif;
+        }
+        .box-32p:hover {
+            background-color: chocolate;
+            transform: scale(0.85);
+            transition: transform 0.5s;
+        }
+
+        .box-32p p:hover { /* 10:20上課 hover 移上去觸發=昨天figma hovering */
+            transform: scale(1.5); /* 變形 : 縮放 */
+            transition: transform 0.5s; /* 過渡 : 監視的屬性(變形) 過渡持續時間*/
+            border: 3px solid #000000;
+            background-color: #ffffff;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: repeat(3, 100px);
+            background-color: #7fffd4;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-100"></div>
+    <br><br>
+    <div class="container">
+        <div class="box-32p"><p>1</p></div>
+        <div class="box-32p"><p>2</p></div>
+        <div class="box-32p"><p>3</p></div>
+        <div class="box-32p"><p>4</p></div>
+        <div class="box-32p"><p>5</p></div>
+        <div class="box-32p"><p>6</p></div>
+        <div class="box-32p"><p>7</p></div>
+        <div class="box-32p"><p>8</p></div>
+        <div class="box-32p"><p>9</p></div>
+    </div>
+</body>
+
+</html>

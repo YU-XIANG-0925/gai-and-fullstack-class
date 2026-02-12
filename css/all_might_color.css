@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+body {
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+:root {
+    /* === 1. 英雄藍 Hero Blue (背景/標題) === */
+    --hero-blue-light: #4D7EC4; /* 輔助背景 / 連結懸停 */
+    --hero-blue: #0047AB;       /* 網站主色 / 標題列 */
+    --hero-blue-dark: #002F70;  /* 頁尾 / 深色底圖 */
+
+    /* === 2. 黃金時代 Golden Era (按鈕/高光) === */
+    --golden-era-light: #FFDB4D; /* 按鈕高光 / 懸停 */
+    --golden-era: #FFCC00;       /* 主要按鈕 (CTA) */
+    --golden-era-dark: #B38F00;  /* 按鈕陰影 / 邊框 */
+
+    /* === 3. 緋紅重擊 Crimson Strike (強調/攻擊) === */
+    --crimson-strike-light: #EB5F65; /* 錯誤提示背景 */
+    --crimson-strike: #E31B23;       /* 刪除按鈕 / 警告 */
+    --crimson-strike-dark: #9F1318;  /* 強調邊框 / 重點 */
+
+    /* === 4. 皮膚與光 Skin & Light (內容/皮膚) === */
+    --skin-and-light-light: #FFF5E0; /* 卡片背景 / 輸入框 */
+    --skin-and-light: #FFE0B0;       /* 內容區塊 / 彈窗 */
+    --skin-and-light-dark: #D4B080;  /* 分隔線 / 禁用狀態 */
+
+    /* === 5. 墨水陰影 Ink Shadow (輪廓/陰影) === */
+    --ink-shadow-light: #4D4D4D; /* 次要文字 / 註解 */
+    --ink-shadow: #1A1A1A;       /* 主要文字 / 標題 */
+    --ink-shadow-dark: #000000;  /* 元件輪廓 / 投影 */
+    
+    /* === 通用邊框樣式 === */
+    --border-thick: 4px solid var(--ink-shadow);
+    --border-thin: 2px solid var(--ink-shadow);
+}
+
+.fw-100 {
+    font-weight: 100;
+}
+.fw-200 {
+    font-weight: 200;
+}
+.fw-300 {
+    font-weight: 300;
+}
+.fw-400 {
+    font-weight: 400;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.fw-600 {
+    font-weight: 600;
+}
+.fw-700 {
+    font-weight: 700;
+}
+.fw-800 {
+    font-weight: 800;
+}
+.fw-900 {
+    font-weight: 900;
+}

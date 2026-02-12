@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>複習01. 使用CSS語法配置版面</title>
+    <link rel="stylesheet" href="css/ex01.css">
+    <style>
+        body {
+            background-color: var(--ui-bg);
+        }
+
+        .wapper {
+            background-color: var(--ep-midnight-500);
+            margin: 0 auto;
+            width: 1024px;
+        }
+
+        .wapper .header img {
+            width: 100%;
+        }
+        
+        nav {
+            background-color: var(--ep-primary-700);
+            text-align: center;
+        }
+
+        nav ul {
+            display: inline-block;
+        }
+
+        nav ul li {
+            float: left;
+            list-style-type: none;
+        }
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            background-color: var(--ep-neon-purple);
+            text-decoration: none;
+            color: var(--ep-midnight-900);
+            margin-right: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px var(--ep-midnight-700);
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: var(--ep-neon-pink);
+            box-shadow: 4px 4px 8px var(--ep-midnight-900);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content_in {
+            background-color: var(--ep-surface-50);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px var(--ep-deep-50);
+            text-align: center;
+        }
+        .content_in h1 {
+            color: var(--ep-deep-500);
+            margin-bottom: 25px;
+        }
+        .content_in p {
+            color: var(--ep-midnight-900);
+            font-size: 20px;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .content_in a {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: var(--ep-primary-500);
+            border-radius: 15%;
+            box-shadow: 2px 2px 5px 2px var(--ep-deep-800);
+            color: var(--ui-text);
+            text-decoration: none;
+        }
+        .content_in a:hover {
+            background-color: var(--ep-neon-pink);
+            box-shadow: 4px 4px 8px var(--ep-neon-blue);
+            color: var(--ep-primary-900);
+            transform: scale(1.2);
+            transition: all 0.3s ease;
+        }
+
+        .footer {
+            background-color: var(--ep-primary-700);
+            text-align: center;
+        }
+        
+        .footer .info {
+            padding: 5px;
+        }
+        .footer .info p{
+            color: var(--ep-midnight-50);
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .wapper {
+                width: 100%;
+            }
+            nav ul {
+                display: block;
+            }
+            nav ul li {
+                width: 80%;
+                float: none;
+                margin: 1px auto;
+            }
+
+            .content p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wapper">
+        <div class="header">
+            <img src="https://picsum.photos/id/925/1440/250" alt="">
+            <nav>
+                <ul>
+                    <li><a href="">首頁</a></li>
+                    <li><a href="">最新消息</a></li>
+                    <li><a href="">更多資訊</a></li>
+                    <li><a href="">關於我們</a></li>
+                    <li><a href="">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="content_in">
+                <h1>歡~迎~光~臨~</h1>
+                <p>回來每一個獨立別的不明白後果地面都在，創造沒有滿意既然結合，對她溫柔性感啟動情節因為早就分享大多數股權，我對處理品牌睡覺被人飯店空中更大滿足，設立三大接下來球員調查鍵盤，民國價格抓住幾個永遠，破壞股東，不去發佈時間裝修儘管是他推薦比賽，多個幾次液晶感謝床。</p>
+                <p>老大業績台中地方教授尚未作用相關對此儀器法國作品填寫以便，初音不久後來精神，適當幾次裝備自信，招聘黑色有時候那裡跟着就有，詳細瀏覽前進線路，是這樣言論授權特殊果然把握責任功能，事情名字日記學歷違反又是，台鐵稱為病毒讀者領域三個，相互這樣就在客人，失敗服飾。</p>
+                <p>按照明確深深配套有限公司，崗位明確深深配套有限先生，當明確深深配套有限。</p>
+                <a href="#">了解更多</a>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="info">
+                <p>© 2026 劉宇翔 (Liu Yu-Xiang). All Rights Reserved.</p>
+                <p>Powered by Your Design</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

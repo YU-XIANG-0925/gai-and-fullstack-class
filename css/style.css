@@ -1,0 +1,73 @@
+/* roller .roller-l  .roller-r  .roller-t   .roller-b */
+.roller-l {
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-l .roller-l_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /* 更有旅遊氛圍的漸層（夕陽+海岸色調） */
+    /* background: linear-gradient(135deg,
+            rgba(255, 204, 153, 0.25) 0%,
+            rgba(255, 140, 66, 0.55) 40%,
+            rgba(0, 180, 216, 0.45) 100%); */
+
+    /* 柔焦玻璃質感 */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    left: -110%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 柔和過渡 */
+    transition: left 0.9s cubic-bezier(0.77, 0, 0.175, 1),
+        opacity 0.6s ease,
+        transform 0.8s ease;
+
+    /* 初始透明感 */
+    opacity: 0.95;
+
+    /* 微立體感 */
+    box-shadow:
+        inset 0 0 80px rgba(255, 255, 255, 0.15),
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    /* 細緻圓角（若父層有圓角會更自然） */
+    border-radius: 12px;
+
+    /* 微縮放增加動態感 */
+    transform: scale(1.05);
+}
+
+
+.roller-l:hover .roller-l_box {
+    left: 0;
+}
+
+.roller-r {
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-r .roller-r_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(228, 205, 186, 0.3), rgba(214, 107, 20, 0.6));
+    right: -100%;
+    display: flex;
+    /* 垂直置中 */
+    align-items: center;
+    /* 水平置中 */
+    justify-content: center;
+    transition: right 1s;
+}
+
+.roller-r:hover .roller-r_box {
+    right: 0;
+}

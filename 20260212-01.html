@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch06. 地方美食列表</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all_might_color.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="myrow">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="content_box roller-l">
+                    <div class="roller-l_box">
+                        <button class="btn btn-primary">查看更多</button>
+                    </div>
+                    <div style="background-image: url(https://picsum.photos/id/684/600/400); height: 160px; background-position: center center;background-size: cover; border-radius: 5px;">
+                    </div>
+                    <div class="h3 text-center fw-900">餐廳名稱</div>
+                    <div class="h5">電話: xxxxxxxxxxx</div>
+                    <div class="h5">地址: xxxxxxxxxxx</div>
+                    <p>簡介: 十分是因為台南感染電視劇這種瀏覽成立引發，過了什麼千萬論文互相問題石油，大哥單位，快捷負責人，培養。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        $(function() {
+            $.ajax({
+                type: "GET",
+                url: "json/TravelFood.json",
+                dataType: "json",
+                success: showdata,
+                error: function() {
+                    console.log("error - json/TravelFood.json NOT FOUND");
+                },
+            });
+        });
+
+        function showdata(items) {
+            console.log(items);
+
+            items.forEach(item => {
+                let pic = item.PicURL ? item.PicURL : "images/oufu.png";
+                let tel = item.Tel ? item.Tel : "未提供";
+                let hostwords = item.HostWords ? item.HostWords.substring(0,30) : "未提供";
+                let strHtml =   `<div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="content_box roller-l">
+                                    <div class="roller-l_box" style="background-image: url('${pic}');">
+                                        <button class="btn btn-primary">
+                                            查看更多
+                                        </button>
+                                    </div>
+                                    <div style="
+                                    background-image: url('${pic}'); height: 160px;
+                                    background-position: center center;
+                                    background-size: cover;
+                                    border-radius: 5px;">
+                                    </div>
+                                    <div class="h3 text-center fw-900">${item.Name}</div>
+                                    <div class="h5">電話: ${item.Tel}</div>
+                                    <div class="h5">地址: ${item.City}${item.Town}${item.Address}</div>
+                                    <p>簡介: ${hostwords}</p>
+                                </div>
+                            </div>`;
+                $("#myrow").append(strHtml);
+            });
+            
+        }
+    </script>
+</body>
+
+</html>
