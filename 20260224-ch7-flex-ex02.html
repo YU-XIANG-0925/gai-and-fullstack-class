@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/all_might_color.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>ch7. Flex</title>
+        <style>
+            .bg-cover {
+                background-position: center center;
+                background-size: cover;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div
+                    class="col-md-4 bg-cover"
+                    style="
+                        background-image: url(images/3DP-001.jpg);
+                        height: 220px;
+                    "
+                ></div>
+                <div
+                    class="col-md-4 bg-cover"
+                    style="
+                        background-image: url(images/3DP-002.jpg);
+                        height: 220px;
+                    "
+                ></div>
+                <div
+                    class="col-md-4 bg-cover"
+                    style="
+                        background-image: url(images/3DP-003.jpg);
+                        height: 220px;
+                    "
+                ></div>
+            </div>
+            <div class="row vh-100">
+                <div
+                    class="col-md-8 bg-cover"
+                    style="background-image: url(images/oufu.png)"
+                ></div>
+                <div class="col-md-4">
+                <div class="d-flex flex-column h-100 row">
+                    <div class="h-50 bg-cover" style="background-image: url(images/oufu.png);"></div>
+                    <div class="h-50 bg-cover" style="background-image: url(images/oufu.png);"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

@@ -1,184 +1,267 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人首頁</title>
-    <link rel="stylesheet" href="css/all_might_color.css">
-    <style>
-        .section01 {
-            background-color: var(--hero-blue-dark);
-            height: 100vh;
-            position: relative;
-            overflow: hidden; /* 防止 hover 時超出邊界 */
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>個人首頁</title>
+        <link rel="stylesheet" href="css/all_might_color.css" />
+        <style>
+            .section01 {
+                background-color: var(--hero-blue-dark);
+                height: 100vh;
+                position: relative;
+                overflow: hidden;
+                /* 防止 hover 時超出邊界 */
+            }
 
-        .section01 .box01{
-            width: 200px;
-            height: 200px;
-            background-color: var(--skin-and-light);
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .section01 .box01:hover {
-            background-color: var(--skin-and-light-dark);
-            top: 200px;
-            left: 200px;
-            transition: all 1s;
-        }
-        .section01 .box02{
-            width: 200px;
-            height: 200px;
-            background-color: var(--skin-and-light);
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-        .section01 .box02:hover {
-            background-color: var(--skin-and-light-dark);
-            top: 200px;
-            right: 200px;
-            transition: all 1s;
-        }
-        .section01 .box03{
-            width: 200px;
-            height: 200px;
-            background-color: var(--skin-and-light);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-        .section01 .box03:hover {
-            background-color: var(--skin-and-light-dark);
-            bottom: 200px;
-            left: 200px;
-            transition: all 1s;
-        }
-        .section01 .box04{
-            width: 200px;
-            height: 200px;
-            background-color: var(--skin-and-light);
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        }
-        .section01 .box04:hover {
-            background-color: var(--skin-and-light-dark);
-            bottom: 200px;
-            right: 200px;
-            transition: all 1s;
-        }
+            .section01 .box01 {
+                width: 200px;
+                height: 200px;
+                background-color: var(--skin-and-light);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
 
-        .userImg {
-            /* background-color: var(--hero-blue); */
-            background-image: url(images/oufu.png);
-            background-size: cover;
-            position: absolute;
-            top: 50px;
-            bottom: 50px;
-            left: 50px;
-            right: 50px;
-        }
-        .userText{
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 245, 224, 0.1);
-            color: var(--ink-shadow);
-            padding: 10px;
-            border-radius: 30px;
-            box-shadow: 1px 1px 2px 1px var(--ink-shadow-dark);
-            z-index: 10; /* 確保文字在最上層 */
-        }
-        .userText h3 {
-            color: var(--crimson-strike);
-        }
-        .userText p {
-            font-size: 18px;
-        }
+            .section01 .box01:hover {
+                background-color: var(--skin-and-light-dark);
+                top: 200px;
+                left: 200px;
+                transition: all 1s;
+            }
 
-        /* Section 02 改用 Flexbox 以容納更多作品 */
-        .section02 {
-            position: relative;
-            min-height: 400px; /* 改為最小高度，依內容長高 */
-            background-color: var(--hero-blue-light);
-            display: flex;
-            flex-wrap: wrap; /* 允許換行 */
-            justify-content: center; /* 水平置中 */
-            gap: 40px; /* 每個圓圈之間的距離 */
-            padding: 50px 20px; /* 上下左右留白 */
-        }
+            .section01 .box02 {
+                width: 200px;
+                height: 200px;
+                background-color: var(--skin-and-light);
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
 
-        /* 統一所有作品圓圈的樣式 */
-        .section02 .work-box {
-            position: relative; /* 改為相對定位 */
-            width: 300px;
-            height: 300px;
-            background-color: var(--golden-era);
-            box-shadow: 2px 2px 3px 2px var(--golden-era-dark);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 300px;
-            transition: all 0.2s;
-            flex-shrink: 0; /* 防止圓圈被壓縮 */
-        } 
-        
-        .section02 .work-box a{
-            text-decoration: none;
-            font-size: 24px; /* 字體稍微縮小以適應長檔名 */
-            color: var(--ink-shadow);
-            display: block; /* 讓連結填滿整個圓 */
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* 防止長檔名溢出 */
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            padding: 0 20px; /* 左右留白防止文字貼邊 */
-            box-sizing: border-box;
-        }
+            .section01 .box02:hover {
+                background-color: var(--skin-and-light-dark);
+                top: 200px;
+                right: 200px;
+                transition: all 1s;
+            }
 
-        .section02 .work-box:hover {
-            background-color: var(--golden-era-light);
-            transform: scale(1.1);
-            z-index: 5;
-        }
-    </style>
-</head>
-<body>
-    <div class="section01">
-        <div class="box01"></div>
-        <div class="box02"></div>
-        <div class="box03"></div>
-        <div class="box04"></div>
-        <div class="userImg"></div>
-        <div class="userText">
-            <h1>劉宇翔</h1>
-            <hr>
-            <h3>曬狗照</h3>
-            <p>牠是我女朋友的狗，牠的名字叫做歐福</p>
-            <p>指出用於最高是以十二一系列，可以對象先後基礎股份中每個遠程立刻咖啡女性新竹背後出現。</p>
+            .section01 .box03 {
+                width: 200px;
+                height: 200px;
+                background-color: var(--skin-and-light);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            .section01 .box03:hover {
+                background-color: var(--skin-and-light-dark);
+                bottom: 200px;
+                left: 200px;
+                transition: all 1s;
+            }
+
+            .section01 .box04 {
+                width: 200px;
+                height: 200px;
+                background-color: var(--skin-and-light);
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+            .section01 .box04:hover {
+                background-color: var(--skin-and-light-dark);
+                bottom: 200px;
+                right: 200px;
+                transition: all 1s;
+            }
+
+            .userImg {
+                /* background-color: var(--hero-blue); */
+                background-image: url(images/oufu.png);
+                background-size: cover;
+                position: absolute;
+                top: 50px;
+                bottom: 50px;
+                left: 50px;
+                right: 50px;
+            }
+
+            .userText {
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgba(255, 245, 224, 0.1);
+                color: var(--ink-shadow);
+                padding: 10px;
+                border-radius: 30px;
+                box-shadow: 1px 1px 2px 1px var(--ink-shadow-dark);
+                z-index: 10;
+                /* 確保文字在最上層 */
+            }
+
+            .userText h3 {
+                color: var(--crimson-strike);
+            }
+
+            .userText p {
+                font-size: 18px;
+            }
+
+            /* Section 02 改用 Flexbox 以容納更多作品 */
+            .section02 {
+                position: relative;
+                min-height: 400px;
+                /* 改為最小高度，依內容長高 */
+                background-color: var(--hero-blue-light);
+                display: flex;
+                flex-wrap: wrap;
+                /* 允許換行 */
+                justify-content: center;
+                /* 水平置中 */
+                gap: 40px;
+                /* 每個圓圈之間的距離 */
+                padding: 50px 20px;
+                /* 上下左右留白 */
+            }
+
+            /* 統一所有作品圓圈的樣式 */
+            .section02 .work-box {
+                position: relative;
+                /* 改為相對定位 */
+                width: 300px;
+                height: 300px;
+                background-color: var(--golden-era);
+                box-shadow: 2px 2px 3px 2px var(--golden-era-dark);
+                border-radius: 50%;
+                text-align: center;
+                line-height: 300px;
+                transition: all 0.2s;
+                flex-shrink: 0;
+                /* 防止圓圈被壓縮 */
+            }
+
+            .section02 .work-box a {
+                text-decoration: none;
+                font-size: 24px;
+                /* 字體稍微縮小以適應長檔名 */
+                color: var(--ink-shadow);
+                display: block;
+                /* 讓連結填滿整個圓 */
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                /* 防止長檔名溢出 */
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding: 0 20px;
+                /* 左右留白防止文字貼邊 */
+                box-sizing: border-box;
+            }
+
+            .section02 .work-box:hover {
+                background-color: var(--golden-era-light);
+                transform: scale(1.1);
+                z-index: 5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="section01">
+            <div class="box01"></div>
+            <div class="box02"></div>
+            <div class="box03"></div>
+            <div class="box04"></div>
+            <div class="userImg"></div>
+            <div class="userText">
+                <h1>劉宇翔</h1>
+                <hr />
+                <h3>曬狗照</h3>
+                <p>牠是我女朋友的狗，牠的名字叫做歐福</p>
+                <p>
+                    指出用於最高是以十二一系列，可以對象先後基礎股份中每個遠程立刻咖啡女性新竹背後出現。
+                </p>
+            </div>
         </div>
-    </div>
-    
-    <div class="section02">
-        <!-- 自動生成的練習作品列表 -->
-        <div class="work-box"><a href="20260122-1.html" target="_blank">HTML 基礎 1</a></div>
-        <div class="work-box"><a href="20260122-2.html" target="_blank">HTML 基礎 2</a></div>
-        <div class="work-box"><a href="20260127-ex01.html" target="_blank">CSS 基礎練習</a></div>
-        <div class="work-box"><a href="20260127-practice-css.html" target="_blank">CSS 方塊練習</a></div>
-        <div class="work-box"><a href="20260129-ex01.html" target="_blank">CSS 版面配置</a></div>
-        <div class="work-box"><a href="20260129-userPage.html" target="_blank">個人首頁練習</a></div>
-        <div class="work-box"><a href="20260202-01.html" target="_blank">Bootstrap 導覽列</a></div>
-        <div class="work-box"><a href="20260202-03.html" target="_blank">Bootstrap 網格系統</a></div>
-        <div class="work-box"><a href="20260202-05.html" target="_blank">Bootstrap 表格設計</a></div>
-        <div class="work-box"><a href="20260205-ch05-table.html" target="_blank">RWD 表格練習</a></div>
-        <div class="work-box"><a href="20260210-ch06-col-ex01.html" target="_blank">欄與列佈局</a></div>
-        <div class="work-box"><a href="20260212-01-practice.html" target="_blank">綜合切版練習</a></div>
-        <div class="work-box"><a href="20260212-01.html" target="_blank">網格系統實作</a></div>
 
-    </div>
-</body>
+        <div class="section02">
+            <!-- 自動生成的練習作品列表 -->
+            <div class="work-box">
+                <a href="20260122-1.html" target="_blank">HTML 基礎 1</a>
+            </div>
+            <div class="work-box">
+                <a href="20260122-2.html" target="_blank">HTML 基礎 2</a>
+            </div>
+            <div class="work-box">
+                <a href="20260127-ex01.html" target="_blank">CSS 基礎練習</a>
+            </div>
+            <div class="work-box">
+                <a href="20260127-practice-css.html" target="_blank"
+                    >CSS 方塊練習</a
+                >
+            </div>
+            <div class="work-box">
+                <a href="20260129-ex01.html" target="_blank">CSS 版面配置</a>
+            </div>
+            <div class="work-box">
+                <a href="20260129-userPage.html" target="_blank"
+                    >個人首頁練習</a
+                >
+            </div>
+            <div class="work-box">
+                <a href="20260202-01.html" target="_blank">Bootstrap 導覽列</a>
+            </div>
+            <div class="work-box">
+                <a href="20260202-03.html" target="_blank"
+                    >Bootstrap 網格系統</a
+                >
+            </div>
+            <div class="work-box">
+                <a href="20260202-05.html" target="_blank"
+                    >Bootstrap 表格設計</a
+                >
+            </div>
+            <div class="work-box">
+                <a href="20260205-ch05-table.html" target="_blank"
+                    >RWD 表格練習</a
+                >
+            </div>
+            <div class="work-box">
+                <a href="20260210-ch06-col-ex01.html" target="_blank"
+                    >欄與列佈局</a
+                >
+            </div>
+            <div class="work-box">
+                <a href="20260212-01-practice.html" target="_blank"
+                    >綜合切版練習</a
+                >
+            </div>
+            <div class="work-box">
+                <a href="20260212-01.html" target="_blank">網格系統實作</a>
+            </div>
+            <div class="work-box">
+                <a href="20260224-ch7-flex.html" target="_blank">Flexbox</a>
+            </div>
+            <div class="work-box">
+                <a href="20260224-ch7-flex-ex01.html" target="_blank"
+                    >Flexbox 練習-1</a
+                >
+            </div>
+            <div class="work-box">
+                <a href="20260224-ch7-flex-ex02.html" target="_blank"
+                    >Flexbox 練習-2-1</a
+                >
+            </div>
+            <div class="work-box">
+                <a href="20260224-ch7-flex-ex02-1.html" target="_blank"
+                    >Flexbox 練習-2-2</a
+                >
+            </div>
+        </div>
+    </body>
 </html>

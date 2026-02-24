@@ -1,3 +1,19 @@
+.title-01{
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--ink-shadow);
+    text-shadow: 
+        2px 2px var(--ink-shadow-dark),
+        4px 4px 8px rgba(0, 0, 0, 0.6);
+    letter-spacing: 2px;
+}
+
+.title-02{
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--graffiti-rusty-blue);
+}
+
 /* roller .roller-l  .roller-r  .roller-t   .roller-b */
 .roller-l {
     position: relative;
