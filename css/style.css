@@ -1,4 +1,4 @@
-.title-01{
+.title-01 {
     font-size: 56px;
     font-weight: 900;
     color: var(--ink-shadow);
@@ -8,16 +8,17 @@
     letter-spacing: 2px;
 }
 
-.title-02{
+.title-02 {
     font-size: 36px;
     font-weight: 900;
     color: var(--graffiti-rusty-blue);
 }
 
-/* roller .roller-l  .roller-r  .roller-t   .roller-b */
+/* roller .roller-l  .roller-r */
 .roller-l {
     position: relative;
     overflow: hidden;
+    border-radius: 12px;
 }
 
 .roller-l .roller-l_box {
@@ -27,9 +28,9 @@
 
     /* 更有旅遊氛圍的漸層（夕陽+海岸色調） */
     background: linear-gradient(135deg,
-            rgba(255, 204, 153, 0.25) 0%,
-            rgba(255, 140, 66, 0.55) 40%,
-            rgba(0, 180, 216, 0.45) 100%);
+            rgba(255, 204, 153, 0.6) 0%,
+            rgba(255, 140, 66, 0.7) 40%,
+            rgba(0, 180, 216, 0.6) 100%);
 
     /* 柔焦玻璃質感 */
     backdrop-filter: blur(6px);
@@ -37,6 +38,7 @@
 
     left: -110%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -53,13 +55,13 @@
         inset 0 0 80px rgba(255, 255, 255, 0.15),
         0 10px 30px rgba(0, 0, 0, 0.15);
 
-    /* 細緻圓角（若父層有圓角會更自然） */
     border-radius: 12px;
-
-    /* 微縮放增加動態感 */
     transform: scale(1.05);
+    
+    /* 確保文字清晰 */
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
-
 
 .roller-l:hover .roller-l_box {
     left: 0;
@@ -68,20 +70,26 @@
 .roller-r {
     position: relative;
     overflow: hidden;
+    border-radius: 12px;
 }
 
 .roller-r .roller-r_box {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(228, 205, 186, 0.3), rgba(214, 107, 20, 0.6));
+    background: linear-gradient(45deg, rgba(228, 205, 186, 0.85), rgba(214, 107, 20, 0.85));
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     right: -100%;
     display: flex;
-    /* 垂直置中 */
+    flex-direction: column;
     align-items: center;
-    /* 水平置中 */
     justify-content: center;
     transition: right 1s;
+    
+    /* 確保文字清晰 */
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
 .roller-r:hover .roller-r_box {
